@@ -1,6 +1,19 @@
-# Even Realities SDK Starter
+# Even Realities Projects
 
-Minimal Vite + TypeScript starter for building an Even Hub plugin for Even Realities G2 glasses.
+Central workspace for Even Realities experiments, apps, shared code, and project notes.
+
+## Repository Shape
+
+```text
+.
+├── docs/                  # Cross-project notes, decisions, and references
+├── projects/              # One folder per Even Realities project
+│   ├── even-starter/      # Current SDK starter app
+│   └── terminal-session/  # Terminal buffer renderer for G2 glasses
+├── shared/                # Reusable code, assets, or config used by multiple projects
+├── package.json           # npm workspace entrypoint and root scripts
+└── package-lock.json      # Single lockfile for the workspace
+```
 
 ## Prerequisites
 
@@ -14,37 +27,76 @@ Minimal Vite + TypeScript starter for building an Even Hub plugin for Even Reali
 npm install
 ```
 
-## Run Locally
+## Work On The Starter
 
-Start the web app:
+Start the starter web app from the repo root:
 
 ```bash
-npm run dev
+npm run dev:starter
 ```
 
 In another terminal, open the simulator:
 
 ```bash
-npm run sim
+npm run sim:starter
 ```
 
-For sideloading to a phone, update the URL in `package.json` or run the CLI directly with your LAN IP:
+Create a QR code for sideloading:
 
 ```bash
-npx evenhub qr --url "http://YOUR_LAN_IP:5173"
+npm run qr:starter
 ```
 
-## Build And Package
+Build and package the starter:
+
+```bash
+npm run pack:starter
+```
+
+## Work On The Terminal Renderer
+
+Start the terminal renderer web app from the repo root:
+
+```bash
+npm run dev:terminal
+```
+
+Optionally start the host bridge for a live local shell:
+
+```bash
+npm run bridge:terminal
+```
+
+In another terminal, open the simulator:
+
+```bash
+npm run sim:terminal
+```
+
+Build and package the terminal renderer:
+
+```bash
+npm run pack:terminal
+```
+
+## Work On Every Project
+
+Run each workspace build:
 
 ```bash
 npm run build
+```
+
+Package every project that defines a `pack` script:
+
+```bash
 npm run pack
 ```
 
-`npm run pack` builds `dist/` and creates `even-starter.ehpk` using `app.json`.
+## Add A Project
 
-## Project Shape
-
-- `src/main.ts` initializes the Even bridge, creates a startup text container, and handles press/swipe events.
-- `app.json` is the Even Hub manifest used by `evenhub pack`.
-- `vite.config.ts` serves the app on port `5173`, matching the simulator command.
+1. Create `projects/<project-name>/`.
+2. Add a project-level `package.json`, `app.json`, and source files.
+3. Use a unique `name` in `package.json` and a unique `package_id` in `app.json`.
+4. Add root convenience scripts only for projects you run often.
+5. Put reusable code in `shared/` once at least two projects need it.

@@ -1,26 +1,31 @@
 {
-  "name": "even-project",
+  "name": "even-realities-projects",
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "workspaces": [
+    "projects/*"
+  ],
   "engines": {
     "node": "^20.12.0 || >=22.13.0"
   },
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host 0.0.0.0",
-    "sim": "evenhub-simulator http://localhost:5173",
-    "qr": "evenhub qr --url http://localhost:5173",
-    "pack": "npm run build && evenhub pack app.json dist -o even-starter.ehpk"
-  },
-  "dependencies": {
-    "@evenrealities/even_hub_sdk": "^0.0.10"
-  },
-  "devDependencies": {
-    "@evenrealities/evenhub-cli": "^0.1.12",
-    "@evenrealities/evenhub-simulator": "^0.7.2",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "dev": "npm run dev:starter",
+    "dev:starter": "npm run dev -w even-starter",
+    "dev:terminal": "npm run dev -w terminal-session",
+    "bridge:terminal": "npm run bridge -w terminal-session",
+    "build": "npm run build --workspaces --if-present",
+    "preview": "npm run preview:starter",
+    "preview:starter": "npm run preview -w even-starter",
+    "preview:terminal": "npm run preview -w terminal-session",
+    "sim": "npm run sim:starter",
+    "sim:starter": "npm run sim -w even-starter",
+    "sim:terminal": "npm run sim -w terminal-session",
+    "qr": "npm run qr:starter",
+    "qr:starter": "npm run qr -w even-starter",
+    "qr:terminal": "npm run qr -w terminal-session",
+    "pack": "npm run pack --workspaces --if-present",
+    "pack:starter": "npm run pack -w even-starter",
+    "pack:terminal": "npm run pack -w terminal-session"
   }
 }
