@@ -16,7 +16,8 @@
     "pack": "npm run build && evenhub pack app.json dist -o terminal-session.ehpk"
   },
   "dependencies": {
-    "@evenrealities/even_hub_sdk": "^0.0.10"
+    "@evenrealities/even_hub_sdk": "^0.0.10",
+    "@xterm/headless": "^6.0.0"
   },
   "devDependencies": {
     "@evenrealities/evenhub-cli": "^0.1.12",

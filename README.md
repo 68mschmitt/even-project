@@ -9,7 +9,7 @@ Central workspace for Even Realities experiments, apps, shared code, and project
 ├── docs/                  # Cross-project notes, decisions, and references
 ├── projects/              # One folder per Even Realities project
 │   ├── even-starter/      # Current SDK starter app
-│   └── terminal-session/  # Terminal buffer renderer for G2 glasses
+│   └── terminal-session/  # Live terminal window renderer for G2 glasses
 ├── shared/                # Reusable code, assets, or config used by multiple projects
 ├── package.json           # npm workspace entrypoint and root scripts
 └── package-lock.json      # Single lockfile for the workspace
@@ -61,11 +61,13 @@ Start the terminal renderer web app from the repo root:
 npm run dev:terminal
 ```
 
-Optionally start the host bridge for a live local shell:
+Start the host bridge for a live local shell window:
 
 ```bash
 npm run bridge:terminal
 ```
+
+After connecting the bridge in the browser, click `Start Keyboard Capture` to use your PC keyboard as live terminal input.
 
 In another terminal, open the simulator:
 
