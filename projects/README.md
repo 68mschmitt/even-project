@@ -6,6 +6,7 @@ Each folder in `projects/` is a standalone Even Realities app, plugin, prototype
 
 - `even-starter`: Minimal Vite + TypeScript Even Hub starter app.
 - `terminal-session`: Terminal-style session buffer renderer for Even Realities G2 glasses.
+- `tmux-glasses`: Minimal tmux pane mirror optimized for the G2 text viewport.
 
 ## Conventions
 

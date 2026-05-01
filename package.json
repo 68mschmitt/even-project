@@ -13,19 +13,25 @@
     "dev": "npm run dev:starter",
     "dev:starter": "npm run dev -w even-starter",
     "dev:terminal": "npm run dev -w terminal-session",
+    "dev:tmux": "npm run dev -w tmux-glasses",
     "bridge:terminal": "npm run bridge -w terminal-session",
+    "bridge:tmux": "npm run bridge -w tmux-glasses",
     "build": "npm run build --workspaces --if-present",
     "preview": "npm run preview:starter",
     "preview:starter": "npm run preview -w even-starter",
     "preview:terminal": "npm run preview -w terminal-session",
+    "preview:tmux": "npm run preview -w tmux-glasses",
     "sim": "npm run sim:starter",
     "sim:starter": "npm run sim -w even-starter",
     "sim:terminal": "npm run sim -w terminal-session",
+    "sim:tmux": "npm run sim -w tmux-glasses",
     "qr": "npm run qr:starter",
     "qr:starter": "npm run qr -w even-starter",
     "qr:terminal": "npm run qr -w terminal-session",
+    "qr:tmux": "npm run qr -w tmux-glasses",
     "pack": "npm run pack --workspaces --if-present",
     "pack:starter": "npm run pack -w even-starter",
-    "pack:terminal": "npm run pack -w terminal-session"
+    "pack:terminal": "npm run pack -w terminal-session",
+    "pack:tmux": "npm run pack -w tmux-glasses"
   }
 }
