@@ -2,7 +2,7 @@
 
 Minimal Even Hub app that mirrors a local tmux pane into the Even Realities G2 viewport.
 
-The basic approach is deliberately small: a host bridge polls `tmux capture-pane`, crops the output to `42x9`, streams it over Server-Sent Events, and the Even app writes those rows into one full-screen text container. The glasses get only terminal text, no UI chrome, so the viewport stays readable.
+The basic approach is deliberately small: a host bridge polls `tmux capture-pane`, crops the output to `57x10`, streams it over Server-Sent Events, and the Even app writes those rows into one full-screen text container. The glasses get only terminal text, no UI chrome, so the viewport stays readable.
 
 ## Run From Repo Root
 
@@ -23,7 +23,7 @@ HOST=0.0.0.0 npm run bridge:tmux
 
 ## tmux Target
 
-By default the bridge creates or reuses a dedicated `even-glasses` tmux session at `42x9`:
+By default the bridge creates or reuses a dedicated `even-glasses` tmux session at `57x10`:
 
 ```bash
 npm run bridge:tmux
@@ -46,10 +46,24 @@ To mirror an existing session or pane without resizing it, pass a target:
 TMUX_TARGET=my-session:0.1 npm run bridge:tmux
 ```
 
-Override the viewport if needed, but `42x9` is the intended readable default for the 576x288 glasses text area:
+Override the viewport if needed, but `57x10` is the intended readable default for the 576x288 glasses text area:
 
 ```bash
-TMUX_COLS=48 TMUX_ROWS=10 npm run bridge:tmux
+TMUX_COLS=48 TMUX_ROWS=9 npm run bridge:tmux
+```
+
+## Text Test Card
+
+Send a held ASCII test card into the captured tmux session to confirm the text bounds:
+
+```bash
+npm run pattern:tmux
+```
+
+The card fills the configured tmux viewport and stays on screen until you press `Ctrl-C` in that tmux pane. To target a different pane:
+
+```bash
+TMUX_TARGET=my-session:0.1 npm run pattern:tmux
 ```
 
 ## Run From This Project

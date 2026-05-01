@@ -10,8 +10,8 @@ import './style.css'
 
 const GLASSES_WIDTH = 576
 const GLASSES_HEIGHT = 288
-const VIEWPORT_COLUMNS = 42
-const VIEWPORT_ROWS = 9
+const VIEWPORT_COLUMNS = 57
+const VIEWPORT_ROWS = 10
 const TMUX_CONTAINER_ID = 1
 const TMUX_CONTAINER_NAME = 'tmux'
 const DEFAULT_BRIDGE_URL = 'http://localhost:8766'
@@ -61,7 +61,7 @@ function initialScreen() {
     'Default target:',
     'tmux session even-glasses',
     '',
-    'Viewport: 42 cols x 9 rows',
+    `Viewport: ${VIEWPORT_COLUMNS} cols x ${VIEWPORT_ROWS} rows`,
   ])
 }
 
@@ -330,9 +330,9 @@ async function createStartupPage(connectedBridge: Bridge) {
     yPosition: 0,
     width: GLASSES_WIDTH,
     height: GLASSES_HEIGHT,
-    borderWidth: 0,
+    borderWidth: 2,
     borderColor: 5,
-    paddingLength: 8,
+    paddingLength: 2,
     containerID: TMUX_CONTAINER_ID,
     containerName: TMUX_CONTAINER_NAME,
     content: glassesContent(),

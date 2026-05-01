@@ -16,6 +16,7 @@
     "dev:tmux": "npm run dev -w tmux-glasses",
     "bridge:terminal": "npm run bridge -w terminal-session",
     "bridge:tmux": "npm run bridge -w tmux-glasses",
+    "pattern:tmux": "npm run pattern:tmux -w tmux-glasses",
     "build": "npm run build --workspaces --if-present",
     "preview": "npm run preview:starter",
     "preview:starter": "npm run preview -w even-starter",

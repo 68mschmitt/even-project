@@ -11,6 +11,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "bridge": "node scripts/tmux-bridge.mjs",
+    "pattern": "node scripts/tmux-pattern.mjs",
+    "pattern:tmux": "node scripts/tmux-pattern.mjs --send",
     "sim": "evenhub-simulator http://localhost:5175",
     "qr": "evenhub qr --url http://localhost:5175",
     "pack": "npm run build && evenhub pack app.json dist -o tmux-glasses.ehpk"

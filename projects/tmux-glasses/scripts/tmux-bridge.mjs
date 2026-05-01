@@ -4,8 +4,8 @@ import os from 'node:os'
 
 const port = numberFromEnv('PORT', 8766)
 const host = process.env.HOST ?? '127.0.0.1'
-const cols = numberFromEnv('TMUX_COLS', 42)
-const rows = numberFromEnv('TMUX_ROWS', 9)
+const cols = numberFromEnv('TMUX_COLS', 57)
+const rows = numberFromEnv('TMUX_ROWS', 10)
 const pollMs = numberFromEnv('TMUX_POLL_MS', 250)
 const sessionName = process.env.TMUX_SESSION ?? 'even-glasses'
 const explicitTarget = process.env.TMUX_TARGET
